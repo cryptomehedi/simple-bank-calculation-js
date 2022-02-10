@@ -19,6 +19,9 @@ document.getElementById('depositBtn').addEventListener('click', function(){
     balanceTotal.innerText = newBalanceTotal;
     // clear input 
     depositInput.value = '';
+    // clear warning message 
+    const ClickText = document.getElementById('warningText');
+    ClickText.innerText = '';
 });
 
 // handel withdraw button 
@@ -40,7 +43,7 @@ document.getElementById('withdrawBtn').addEventListener('click', function(){
 
     if(0 > newBalanceTotal){
         const ClickText = document.getElementById('warningText');
-        ClickText.innerText = 'insufficient balance'
+        ClickText.innerText = 'insufficient balance';
         withdrawInput.value = '';
     }else{
         // update withdraw total 
