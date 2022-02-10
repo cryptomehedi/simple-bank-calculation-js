@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Bank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="text-5xl text-center	mt-14 ">Welcome to my <span class="text-orange-500 font-semibold">Bank</span></h1>
+    </header>
+    <main>
+        <section class="bg-amber-100 p-8 w-3/4 mx-auto mt-8">
+            <h3 class="text-3xl mb-4">Please Login</h3>
+            <div>
+                <input id="user-email" class="border-2 block border-gray-400 rounded w-1/2 mb-4 px-2" type="text" placeholder="Your Email">
+                <input id="user-password" class="border-2 block border-gray-400 rounded w-1/2 mb-4 px-2" type="password" name="" id="" placeholder="Password">
+                <button id="login-submit" class="bg-yellow-600 px-4 rounded py-2 text-white font-medium">Submit</button>
+            </div>
+        </section>
+    </main>
+    <script src="./js/bank.js"></script>
+</body>
+</html>
