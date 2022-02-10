@@ -7,6 +7,7 @@ document.getElementById('depositBtn').addEventListener('click', function(){
     const newDepositAmount = parseFloat(newDepositAmountText);
 
     if (newDepositAmount <= 0){
+        // pop warning message 
         const ClickTextD = document.getElementById('warningTextD');
         ClickTextD.innerText = 'Put Valid Amount';
         const ClickTextW = document.getElementById('warningTextW');
@@ -33,27 +34,21 @@ document.getElementById('depositBtn').addEventListener('click', function(){
     const ClickTextW = document.getElementById('warningTextW');
     ClickTextW.innerText = '';
     }
-    
-    
 });
 
 // handel withdraw button 
 
 document.getElementById('withdrawBtn').addEventListener('click', function(){
     // get the amount 
-    
-    
     const withdrawInput = document.getElementById('withdraw-input');
     const newWithdrawAmountText = withdrawInput.value;
     const newWithdrawAmount = parseFloat(newWithdrawAmountText);
-    
     // update balance 
     const balanceTotal = document.getElementById('balance-total');
     const balanceTotalText = balanceTotal.innerText;
     const previousBalanceTotal = parseFloat(balanceTotalText);
     const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
-
-
+    // pop warning message 
     if(0 > newBalanceTotal){
         const ClickTextD = document.getElementById('warningTextD');
         ClickTextD.innerText = '';
@@ -75,7 +70,6 @@ document.getElementById('withdrawBtn').addEventListener('click', function(){
         const ClickTextW = document.getElementById('warningTextW');
         ClickTextW.innerText = '';
     }
-    
 });
 
 
