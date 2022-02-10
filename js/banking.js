@@ -28,6 +28,8 @@ document.getElementById('depositBtn').addEventListener('click', function(){
     // clear input 
     depositInput.value = '';
     // clear warning message 
+    const ClickTextD = document.getElementById('warningTextD');
+    ClickTextD.innerText = '';
     const ClickTextW = document.getElementById('warningTextW');
     ClickTextW.innerText = '';
     }
@@ -53,9 +55,9 @@ document.getElementById('withdrawBtn').addEventListener('click', function(){
 
 
     if(0 > newBalanceTotal){
-        const ClickTextW = document.getElementById('warningTextW');
         const ClickTextD = document.getElementById('warningTextD');
         ClickTextD.innerText = '';
+        const ClickTextW = document.getElementById('warningTextW');
         ClickTextW.innerText = 'insufficient balance';
         withdrawInput.value = '';
     }else{
@@ -68,6 +70,10 @@ document.getElementById('withdrawBtn').addEventListener('click', function(){
         // update balance 
         balanceTotal.innerText = newBalanceTotal;
         withdrawInput.value = '';
+        const ClickTextD = document.getElementById('warningTextD');
+        ClickTextD.innerText = '';
+        const ClickTextW = document.getElementById('warningTextW');
+        ClickTextW.innerText = '';
     }
     
 });
