@@ -9,11 +9,8 @@ document.getElementById('depositBtn').addEventListener('click', function(){
     const depositTotal = document.getElementById('deposit-total');
     const previousDepositAmountText = depositTotal.innerText;
     const previousDepositAmount = parseFloat(previousDepositAmountText);
-
     const newDepositTotal = previousDepositAmount + newDepositAmount ;
-    
     depositTotal.innerText = newDepositTotal;
-
 // update balance 
     const balanceTotal = document.getElementById('balance-total');
     const balanceTotalText = balanceTotal.innerText;
@@ -35,18 +32,14 @@ document.getElementById('withdrawBtn').addEventListener('click', function(){
     const withdrawTotal = document.getElementById('withdraw-total');
     const previousWithdrawAmountText = withdrawTotal.innerText;
     const previousWithdrawAmount = parseFloat(previousWithdrawAmountText);
-
     const newWithdrawTotal = previousWithdrawAmount + newWithdrawAmount ;
-    
     withdrawTotal.innerText = newWithdrawTotal;
-
 // update balance 
     const balanceTotal = document.getElementById('balance-total');
     const balanceTotalText = balanceTotal.innerText;
     const previousBalanceTotal = parseFloat(balanceTotalText);
     const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
     balanceTotal.innerText = newBalanceTotal;
-
     // clear input 
     withdrawInput.value = '';
 });
