@@ -5,8 +5,16 @@ document.getElementById('depositBtn').addEventListener('click', function(){
     const depositInput = document.getElementById('deposit-input');
     const newDepositAmountText = depositInput.value;
     const newDepositAmount = parseFloat(newDepositAmountText);
-    // update deposit total 
-    const depositTotal = document.getElementById('deposit-total');
+
+    if (newDepositAmount <= 0){
+        const ClickTextD = document.getElementById('warningTextD');
+        ClickTextD.innerText = 'Put Valid Amount';
+        const ClickTextW = document.getElementById('warningTextW');
+        ClickTextW.innerText = '';
+        depositInput.value = '';
+    }else{
+        // update deposit total
+        const depositTotal = document.getElementById('deposit-total');
     const previousDepositAmountText = depositTotal.innerText;
     const previousDepositAmount = parseFloat(previousDepositAmountText);
     const newDepositTotal = previousDepositAmount + newDepositAmount ;
@@ -20,8 +28,11 @@ document.getElementById('depositBtn').addEventListener('click', function(){
     // clear input 
     depositInput.value = '';
     // clear warning message 
-    const ClickText = document.getElementById('warningText');
-    ClickText.innerText = '';
+    const ClickTextW = document.getElementById('warningTextW');
+    ClickTextW.innerText = '';
+    }
+    
+    
 });
 
 // handel withdraw button 
@@ -42,8 +53,10 @@ document.getElementById('withdrawBtn').addEventListener('click', function(){
 
 
     if(0 > newBalanceTotal){
-        const ClickText = document.getElementById('warningText');
-        ClickText.innerText = 'insufficient balance';
+        const ClickTextW = document.getElementById('warningTextW');
+        const ClickTextD = document.getElementById('warningTextD');
+        ClickTextD.innerText = '';
+        ClickTextW.innerText = 'insufficient balance';
         withdrawInput.value = '';
     }else{
         // update withdraw total 
