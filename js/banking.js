@@ -6,7 +6,7 @@ document.getElementById('depositBtn').addEventListener('click', function(){
     const newDepositAmountText = depositInput.value;
     const newDepositAmount = parseFloat(newDepositAmountText);
 
-    if (newDepositAmount <= 0){
+    if (newDepositAmount <= 0 || newDepositAmountText == '.'){
         // pop warning message 
         const ClickTextD = document.getElementById('warningTextD');
         ClickTextD.innerText = 'Put Valid Amount';
@@ -49,7 +49,7 @@ document.getElementById('withdrawBtn').addEventListener('click', function(){
     const previousBalanceTotal = parseFloat(balanceTotalText);
     const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
     // pop warning message 
-    if(0 > newBalanceTotal){
+    if(0 > newBalanceTotal || newWithdrawAmountText = '.'){
         const ClickTextD = document.getElementById('warningTextD');
         ClickTextD.innerText = '';
         const ClickTextW = document.getElementById('warningTextW');
