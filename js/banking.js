@@ -55,7 +55,7 @@ document.getElementById('withdrawBtn').addEventListener('click', function(){
         const ClickTextW = document.getElementById('warningTextW');
         ClickTextW.innerText = 'insufficient balance';
         withdrawInput.value = '';
-    }else if(newWithdrawAmountText == '.'){
+    }else if(newWithdrawAmountText == '.' || newWithdrawAmount == 0 ){
         const ClickTextD = document.getElementById('warningTextD');
         ClickTextD.innerText = '';
         const ClickTextW = document.getElementById('warningTextW');
