@@ -7,5 +7,9 @@ document.getElementById('login-submit').addEventListener('click', function(){
 
     if( userEmail == 'test@gmail.com' && userPassword == 'test'){
         window.location.href = 'banking.html'
+    }else{
+        const warningEmail = document.getElementById('warning-email');
+        warningEmail.innerText = 'Email Or Password Incorrect';
+        withdrawInput.value = '';
     }
 });
