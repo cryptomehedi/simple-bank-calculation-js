@@ -49,13 +49,20 @@ document.getElementById('withdrawBtn').addEventListener('click', function(){
     const previousBalanceTotal = parseFloat(balanceTotalText);
     const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
     // pop warning message 
-    if(0 > newBalanceTotal || newWithdrawAmountText = '.'){
+    if(0 > newBalanceTotal){
         const ClickTextD = document.getElementById('warningTextD');
         ClickTextD.innerText = '';
         const ClickTextW = document.getElementById('warningTextW');
         ClickTextW.innerText = 'insufficient balance';
         withdrawInput.value = '';
-    }else{
+    }else if(newWithdrawAmountText == '.'){
+        const ClickTextD = document.getElementById('warningTextD');
+        ClickTextD.innerText = '';
+        const ClickTextW = document.getElementById('warningTextW');
+        ClickTextW.innerText = 'Put Valid Amount';
+        withdrawInput.value = '';
+    }
+    else{
         // update withdraw total 
         const withdrawTotal = document.getElementById('withdraw-total');
         const previousWithdrawAmountText = withdrawTotal.innerText;
