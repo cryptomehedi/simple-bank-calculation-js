@@ -81,7 +81,6 @@ document.getElementById('withdrawBtn').addEventListener('click', function(){
 
 
 
-
 // const withdrawInput = document.getElementById('withdraw-input');
 //     const newWithdrawAmountText = withdrawInput.value;
 //     const newWithdrawAmount = parseFloat(newWithdrawAmountText);
