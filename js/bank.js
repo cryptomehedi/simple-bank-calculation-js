@@ -15,10 +15,17 @@ document.getElementById('login-submit').addEventListener('click', function(){
 });
 
 
-function copyToClipboard(element) {
-    var $temp = $("<input>");
-    $("body").append($temp);
-    $temp.val($(element).text()).select();
-    document.execCommand("copy");
-    $temp.remove();
-}
+// click to copy 
+
+document.getElementById('first-email').addEventListener('click', function(){
+    const firstEmail = document.getElementById('user-email');
+    const firstEmailPass = document.getElementById('user-password');
+    firstEmail.value = 'test@gmail.com';
+    firstEmailPass.value = 'test';
+});
+document.getElementById('sec-email').addEventListener('click', function(){
+    const firstEmail = document.getElementById('user-email');
+    const firstEmailPass = document.getElementById('user-password');
+    firstEmail.value = 'admin@admin.com';
+    firstEmailPass.value = 'admin';
+});

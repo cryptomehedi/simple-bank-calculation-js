@@ -7,7 +7,7 @@
     , initial-scale=1.0">
     <title>Bank</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
 
     <script>
         tailwind.config = {
@@ -30,7 +30,7 @@
             <h3 class="text-3xl mb-4">Please Login</h3>
             <div>
                 <p id="warning-email" class="text-red-600 font-semibold"></p>
-                <input id="user-email" class="border-2 block border-gray-400 rounded w-1/2 mb-4 px-2" type="text" placeholder="Your Email">
+                <input id="user-email"  class="border-2 block border-gray-400 rounded w-1/2 mb-4 px-2" type="text" placeholder="Your Email" >
                 <input id="user-password" class="border-2 block border-gray-400 rounded w-1/2 mb-4 px-2" type="password" name="" id="" placeholder="Password">
                 <button id="login-submit" class="bg-yellow-600 px-4 rounded py-2 text-white font-medium">Submit</button>
             </div>
@@ -39,12 +39,11 @@
             <div class="flex justify-evenly">
                     <P >
                         Email : <span id="p1">test@gmail.com</span>
-                        <button class="bg-yellow-600 px-2 rounded-full mb-1 text-white font-medium" onclick="copyToClipboard('#p1')">Copy Email</button>
                     </p>
                     
                     <P>
                         Password : <span id="p2">test</span>
-                        <button class="bg-yellow-600 px-2 rounded-full my-1 text-white font-medium" onclick="copyToClipboard('#p2')">Copy Pass</button>
+                        <button id="first-email" class="bg-yellow-600 px-2 rounded-full my-1 text-white font-medium" >Copy</button>
                     </p>
                     
             </div>
@@ -52,12 +51,11 @@
             <div class="flex justify-evenly">
                     <P>
                         Email : <span id="p3">admin@admin.com</span>
-                        <button class="bg-yellow-600 px-2 rounded-full my-1 text-white font-medium" onclick="copyToClipboard('#p3')">Copy Email</button>
                     </p>
                     
                     <P>
                         Password : <span id="p4">admin</span>
-                        <button class="bg-yellow-600 px-2 rounded-full mt-1 text-white font-medium" onclick="copyToClipboard('#p4')">Copy Pass</button>
+                        <button id="sec-email" class="bg-yellow-600 px-2 rounded-full mt-1 text-white font-medium" >Copy</button>
                     </p>
             </div>
         </section>
