@@ -6,33 +6,34 @@ document.getElementById('depositBtn').addEventListener('click', function(){
     const newDepositAmountText = depositInput.value;
     const newDepositAmount = parseFloat(newDepositAmountText);
 
-    if (newDepositAmount <= 0 || newDepositAmountText == '.'){
-        // pop warning message 
+    if (newDepositAmount > 0 ){
+         // update deposit total
+        const depositTotal = document.getElementById('deposit-total');
+        const previousDepositAmountText = depositTotal.innerText;
+        const previousDepositAmount = parseFloat(previousDepositAmountText);
+        const newDepositTotal = previousDepositAmount + newDepositAmount ;
+        depositTotal.innerText = newDepositTotal;
+         // update balance 
+        const balanceTotal = document.getElementById('balance-total');
+        const balanceTotalText = balanceTotal.innerText;
+        const previousBalanceTotal = parseFloat(balanceTotalText);
+        const newBalanceTotal = previousBalanceTotal + newDepositAmount;
+        balanceTotal.innerText = newBalanceTotal;
+         // clear input 
+        depositInput.value = '';
+         // clear warning message 
+        const ClickTextD = document.getElementById('warningTextD');
+        ClickTextD.innerText = '';
+        const ClickTextW = document.getElementById('warningTextW');
+        ClickTextW.innerText = '';
+        
+    }else{
+         // pop warning message 
         const ClickTextD = document.getElementById('warningTextD');
         ClickTextD.innerText = 'Put Valid Amount';
         const ClickTextW = document.getElementById('warningTextW');
         ClickTextW.innerText = '';
         depositInput.value = '';
-    }else{
-        // update deposit total
-        const depositTotal = document.getElementById('deposit-total');
-    const previousDepositAmountText = depositTotal.innerText;
-    const previousDepositAmount = parseFloat(previousDepositAmountText);
-    const newDepositTotal = previousDepositAmount + newDepositAmount ;
-    depositTotal.innerText = newDepositTotal;
-// update balance 
-    const balanceTotal = document.getElementById('balance-total');
-    const balanceTotalText = balanceTotal.innerText;
-    const previousBalanceTotal = parseFloat(balanceTotalText);
-    const newBalanceTotal = previousBalanceTotal + newDepositAmount;
-    balanceTotal.innerText = newBalanceTotal;
-    // clear input 
-    depositInput.value = '';
-    // clear warning message 
-    const ClickTextD = document.getElementById('warningTextD');
-    ClickTextD.innerText = '';
-    const ClickTextW = document.getElementById('warningTextW');
-    ClickTextW.innerText = '';
     }
 });
 
@@ -55,14 +56,7 @@ document.getElementById('withdrawBtn').addEventListener('click', function(){
         const ClickTextW = document.getElementById('warningTextW');
         ClickTextW.innerText = 'insufficient balance';
         withdrawInput.value = '';
-    }else if(newWithdrawAmountText == '.' || newWithdrawAmount == 0 ){
-        const ClickTextD = document.getElementById('warningTextD');
-        ClickTextD.innerText = '';
-        const ClickTextW = document.getElementById('warningTextW');
-        ClickTextW.innerText = 'Put Valid Amount';
-        withdrawInput.value = '';
-    }
-    else{
+    }else if(newWithdrawAmount > 0 ){
         // update withdraw total 
         const withdrawTotal = document.getElementById('withdraw-total');
         const previousWithdrawAmountText = withdrawTotal.innerText;
@@ -76,6 +70,14 @@ document.getElementById('withdrawBtn').addEventListener('click', function(){
         ClickTextD.innerText = '';
         const ClickTextW = document.getElementById('warningTextW');
         ClickTextW.innerText = '';
+    }
+    else{
+        // pop warning message 
+        const ClickTextD = document.getElementById('warningTextD');
+        ClickTextD.innerText = '';
+        const ClickTextW = document.getElementById('warningTextW');
+        ClickTextW.innerText = 'Put Valid Amount';
+        withdrawInput.value = '';
     }
 });
 
