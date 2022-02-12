@@ -29,5 +29,17 @@ document.getElementById('sec-email').addEventListener('click', function(){
     firstEmail.value = 'admin@admin.com';
     firstEmailPass.value = 'admin';
 });
+document.getElementById('third-email').addEventListener('click', function(){
+    const firstEmail = document.getElementById('user-email');
+    const firstEmailPass = document.getElementById('user-password');
+    firstEmail.value = 'test@test.com';
+    firstEmailPass.value = 'test';
+});
+document.getElementById('forth-email').addEventListener('click', function(){
+    const firstEmail = document.getElementById('user-email');
+    const firstEmailPass = document.getElementById('user-password');
+    firstEmail.value = 'admin@gmail.com';
+    firstEmailPass.value = 'admin';
+});
 
 
