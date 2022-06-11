@@ -1,7 +1,9 @@
 // handel deposit button 
+document.querySelector('.form').addEventListener('submit', function(e) {e.preventDefault()})
+document.querySelector('.formSec').addEventListener('submit', function(e) {e.preventDefault()})
 
-document.getElementById('depositBtn').addEventListener('click', function(e){
-    e.preventDefault();
+
+document.getElementById('depositBtn').addEventListener('click', function(){
     // get the amount 
     const depositInput = document.getElementById('deposit-input');
     const newDepositAmountText = depositInput.value;
@@ -14,12 +16,14 @@ document.getElementById('depositBtn').addEventListener('click', function(e){
         const previousDepositAmount = parseFloat(previousDepositAmountText);
         const newDepositTotal = previousDepositAmount + newDepositAmount ;
         depositTotal.innerText = newDepositTotal;
+        localStorage.setItem('depositTotal', JSON.stringify(newDepositTotal))
          // update balance 
         const balanceTotal = document.getElementById('balance-total');
         const balanceTotalText = balanceTotal.innerText;
         const previousBalanceTotal = parseFloat(balanceTotalText);
         const newBalanceTotal = previousBalanceTotal + newDepositAmount;
         balanceTotal.innerText = newBalanceTotal;
+        localStorage.setItem('balanceTotal', JSON.stringify(newBalanceTotal))
          // clear input 
         depositInput.value = '';
          // clear warning message 
@@ -38,10 +42,11 @@ document.getElementById('depositBtn').addEventListener('click', function(e){
     }
 });
 
+
+
 // handel withdraw button 
 
-document.getElementById('withdrawBtn').addEventListener('click', function(e){
-    e.preventDefault();
+document.getElementById('withdrawBtn').addEventListener('click', function(){
     // get the amount 
     const withdrawInput = document.getElementById('withdraw-input');
     const newWithdrawAmountText = withdrawInput.value;
@@ -65,8 +70,10 @@ document.getElementById('withdrawBtn').addEventListener('click', function(e){
         const previousWithdrawAmount = parseFloat(previousWithdrawAmountText);
         const newWithdrawTotal = previousWithdrawAmount + newWithdrawAmount ;
         withdrawTotal.innerText = newWithdrawTotal;
+        localStorage.setItem('withdrawTotal', JSON.stringify(newWithdrawTotal))
         // update balance 
         balanceTotal.innerText = newBalanceTotal;
+        localStorage.setItem('balanceTotal', JSON.stringify(newBalanceTotal))
         withdrawInput.value = '';
         const ClickTextD = document.getElementById('warningTextD');
         ClickTextD.innerText = '';
