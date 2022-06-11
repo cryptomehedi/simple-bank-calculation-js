@@ -1,6 +1,7 @@
 // handel deposit button 
 
-document.getElementById('depositBtn').addEventListener('click', function(){
+document.getElementById('depositBtn').addEventListener('click', function(e){
+    e.preventDefault();
     // get the amount 
     const depositInput = document.getElementById('deposit-input');
     const newDepositAmountText = depositInput.value;
@@ -39,7 +40,8 @@ document.getElementById('depositBtn').addEventListener('click', function(){
 
 // handel withdraw button 
 
-document.getElementById('withdrawBtn').addEventListener('click', function(){
+document.getElementById('withdrawBtn').addEventListener('click', function(e){
+    e.preventDefault();
     // get the amount 
     const withdrawInput = document.getElementById('withdraw-input');
     const newWithdrawAmountText = withdrawInput.value;
